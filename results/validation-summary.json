@@ -1,0 +1,152 @@
+{
+  "report_date": "2026-10-26",
+  "device": {
+    "manufacturer": "Huawei",
+    "model": "MateBook 14 2024",
+    "product": "FLMH-XX",
+    "acpi_hid": "SIL6250",
+    "firmware": "0.0.32.15",
+    "image_width": 64,
+    "image_height": 80,
+    "product_version": "M1010"
+  },
+  "software": {
+    "os": "Ubuntu 26.10",
+    "kernel": "7.3.0-9-generic",
+    "openssl": "4.0.3",
+    "wine": "10.0",
+    "rustc": "1.97.1",
+    "cargo": "1.97.1"
+  },
+  "source_revisions": {
+    "sil6250-linux": "cd19287313b92b1ccc236c95fd615467ac833648",
+    "open-fprintd": "b7073730bccca36e84484e3fcb4f8253ea038d07"
+  },
+  "vendor_library": {
+    "package_version": "3.9.5.23",
+    "filename": "DllSiMatcher.dll",
+    "sha256": "5859f8c56c35b4fb823a5facf97a795861582a2f10d1fbbd05467c755d3d8837"
+  },
+  "offline_dataset": {
+    "participants": 1,
+    "index_presses": 16,
+    "thumb_presses": 8,
+    "settled_frames_per_press": 4,
+    "initial_contact_frames_per_press": 1,
+    "wrong_finger": "unenrolled thumb of the same participant",
+    "enrollment_index_press_range": {
+      "first": 1,
+      "last": 8
+    },
+    "held_out_index_press_range": {
+      "first": 9,
+      "last": 16
+    }
+  },
+  "offline_benchmarks": [
+    {
+      "variant": "linux-matrix",
+      "frames_per_probe": 1,
+      "correct_accepts": 1,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 0,
+      "wrong_finger_attempts": 8
+    },
+    {
+      "variant": "linux-matrix",
+      "frames_per_probe": 4,
+      "correct_accepts": 3,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 1,
+      "wrong_finger_attempts": 8
+    },
+    {
+      "variant": "windows-library-with-removeline",
+      "frames_per_probe": 1,
+      "correct_accepts": 4,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 0,
+      "wrong_finger_attempts": 8
+    },
+    {
+      "variant": "windows-library-with-removeline",
+      "frames_per_probe": 4,
+      "correct_accepts": 4,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 0,
+      "wrong_finger_attempts": 8
+    },
+    {
+      "variant": "linux-root",
+      "frames_per_probe": 4,
+      "correct_accepts": 4,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 0,
+      "wrong_finger_attempts": 8
+    },
+    {
+      "variant": "linux-win-preprocessed",
+      "frames_per_probe": 4,
+      "correct_accepts": 2,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 0,
+      "wrong_finger_attempts": 8
+    },
+    {
+      "variant": "linux-pyramid",
+      "frames_per_probe": 4,
+      "correct_accepts": 1,
+      "correct_attempts": 8,
+      "wrong_finger_accepts": 2,
+      "wrong_finger_attempts": 8
+    }
+  ],
+  "leave_one_press_out": {
+    "correct_probe_count": 16,
+    "index_references_per_correct_probe": 15,
+    "index_references_per_thumb_probe": 16,
+    "aggregation": "Best single-reference pair result, not a newly enrolled fifteen-image vendor template.",
+    "windows_correct_accepts": 13,
+    "windows_wrong_finger_accepts": 0,
+    "linux_correct_accepts": 3,
+    "linux_wrong_finger_accepts": 1,
+    "wrong_finger_probe_count": 8
+  },
+  "fresh_live_verification": {
+    "independent_of_offline_dataset": true,
+    "enrollment_accepted_samples": 14,
+    "enrollment_presentations": 16,
+    "correct_attempts": 8,
+    "correct_accepts": 6,
+    "wrong_finger_attempts": 8,
+    "wrong_finger_accepts": 0
+  },
+  "pam_authentication": {
+    "service": "sudo",
+    "regular_desktop_user": true,
+    "password_input_enabled": false,
+    "success": true,
+    "attempts_used": 1
+  },
+  "software_tests": {
+    "library_passed": 20,
+    "daemon_passed": 8,
+    "optional_isolated_bus_skipped": 1
+  },
+  "other_checks_passed": [
+    "native-template pack and reload",
+    "cold matcher-service restart",
+    "known-image positive and negative controls",
+    "manager suspend/resume control calls",
+    "unprivileged matcher socket access denied",
+    "uninitialized verification rejected",
+    "oversized request rejected",
+    "pinned DLL checksum checked at service startup"
+  ],
+  "limitations": [
+    "One participant and a small sample set; no population FAR or FRR claim.",
+    "Native Linux matching port is incomplete.",
+    "The Wine harness does not implement the complete Windows Hello engine.",
+    "Full OS sleep/resume, final-stack reboot, and separate GDM lock-screen authentication were not exercised."
+  ]
+}

@@ -1,0 +1,24 @@
+# Private research data and machine-specific material
+captures*/
+windows-preprocessed/
+windows-features/
+wine-prefix/
+decompiled/
+*.raw
+*.pgm
+*.silf
+features.bin
+vendor.bin
+*vendor-template.bin
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Vendor packages and generated executables
+*.cab
+*.dll
+*.exe
+*.exe.so
+__pycache__/
+*.pyc
